@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>bassline自動生成</title>
+</head>
+<body>
+  コード進行を書いたテキストファイルをuploadしてください。ベースラインを出力します。
+  <br>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="chord" accept=".txt">
+    <input type="submit" value="送信">
+  </form>
+  <pre>
+    <code>
+      1行目: キー (C, Amなど)
+      2行目: bpm
+      3行目: コード進行
+    </code>
+  </pre>
+  <ul>
+    <li>ルートは大文字</li>
+    <li>小節線を入れる</li>
+    <li>同じコードが続く時は*で表す</li>
+    <li>1小節に1コード, 1小節にコード2つで2拍ずつの場合はコードネームだけで良い |C***|→|C|  |Dm*G*|→|DmG|
+    <li>フラットは-,  シャープは#で表す。(music21に準拠) (E-M7, F#7 など)</li>
+  </ul>
+  <br>
+  例えば、
+  <pre>
+  <code>
+    key: Gm
+    bpm: 120
+    Cm7***|F7***|B-M7***|E-M7***|Adim***|D7***|Gm***|Gm***|
+  </code>
+  </pre>
+</body>
+</html>
