@@ -14,7 +14,7 @@ from midi2audio import FluidSynth
 
 
 chord_num={'C':0, 'D':2, 'E':4, 'F':5, 'G':7, 'A':9, 'B':11}
-tension={'7':10, 'M7':11, '6':9, '2': 2, '4': 5, '9': 2}
+tension={'7':[10], 'M7':[11], '6':[9], '9': [10,2]}
 
 def txt_to_mid(fname, output):
     key, bpm, length, chord=make_chord(fname)
@@ -41,7 +41,8 @@ def make_chord(fname):
     bpm=re.split('[bpm: \n]',data[1])
     bpm=[i for i in bpm if i]
 
-    chord=data[2].split('|')
+    chord=''.join(data[2:]).replace('\n', '')
+    chord=chord.split('|')
     chord=[i for i in chord if i]
     length=len(chord)
     newchord=[]
@@ -109,19 +110,35 @@ def make_chord_tone(data):
             tone[1]-=1
             tone[2]-=1
         elif('aug' in chord):
-            tone[1]+=1
             tone[2]+=1
         elif('m' in chord):
             tone[1]-=1
-        elif('sus' in chord):
-            tone.pop(1)
+        elif('sus4' in chord):
+            tone[1]+=1
+        elif('sus2' in chord):
+            tone[1]-=2
+        
+        if('-5' in chord):
+            tone[2]-=1
+        elif('+5' in chord):
+            tone[2]+=1
 
         
         for i in reversed(chord):
-            if i.isdecimal():
-                tone.append(root+tension[i])
-                if('M' in chord and i=='7'):
-                    tone[-1]+=1
+            if i.isdecimal() and i in tension:
+                for j in tension[i]:
+                    tone.append(root+j)
+                if('M' in chord):
+                    for j in range(len(tone)):
+                        if tone[j]==root+10:
+                            tone[j]+=1
+
+                if('dim' in chord and i=='7'):
+                    tone[-1]-=1
+                if('add' in chord and i=='9'):
+                    tone.pop(-2)
+                if('69' in chord and i=='6'):
+                    tone.pop(-3)
             #else:
                 #break
         

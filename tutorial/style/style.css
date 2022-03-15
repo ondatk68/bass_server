@@ -1,0 +1,107 @@
+html{
+    height:100%;
+}
+body{
+    height:100%;
+    margin:0%;
+    background-color: darkblue;
+}
+
+p{
+    padding: 1%;
+}
+
+.header{
+    background-color: darkblue;
+    color:white;
+    height: 15%;
+    font-size: 30px;
+    font-family: ui-rounded;
+
+    /*中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main .explanation{
+    /*中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .input .button{
+    /*中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .input .key{
+    /*中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .input .key .tel{
+    width:3em;
+    text-align: center;
+}
+
+.main .input .chord{
+    /*中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .input .chord .text{
+    width:80%;
+    line-height: 1.5;
+    height: 20em;
+    font-size: 15pt;
+
+}
+
+.main .input .submit{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main{
+    display: flex;
+    height: 85%;
+}
+.main .input{
+    padding: 2%;
+    width: 50%;
+    
+    background-color: lavender;
+    display: block;
+}
+.main .explanation{
+    padding: 2%;
+    width: 50%;
+
+    background-color: beige;
+    display: block;
+}
+/*
+.main .input{
+    display:flex;
+    width:40%;
+    height: 100%;
+
+    background-color: darkgray;
+}
+
+.main .explanation{
+    display: flex;
+    width:60%;
+    height: 100%;
+
+    background-color: bisque;
+}*/

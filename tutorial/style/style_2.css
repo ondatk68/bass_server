@@ -1,0 +1,30 @@
+html{
+    height:100%;
+}
+body{
+    height:100%;
+    margin:0%;
+    background-color: white;
+}
+
+.header{
+    background-color: darkblue;
+    color:white;
+    height: 15%;
+    font-size: 30px;
+    font-family: ui-rounded;
+
+    /*中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main .audio{
+    padding: 2%;
+    /*中央揃え*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

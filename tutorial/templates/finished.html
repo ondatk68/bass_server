@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <title>bassline自動生成</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./../style/style_2.css">
+    <title>walking bass</title>
 </head>
 <body>
-<p>完了
-<audio controls>
-    <source src="output/tmp.mp3">
-</audio>
-<a href="output/tmp_b.mid"><button>.midをダウンロード(ベースのみ)</button></a>
-<a href="output/tmp.mid"><button>.midをダウンロード(全体)</button></a>
-</p>
-
-<img style="width: 80vw; padding-left: 10%;" src={{ key }}  title="楽譜">
+    <div class="header">ウォーキングベース自動生成</div>
+    <div class="main">
+        <div class="audio">
+            <audio controls>
+                <source src="output/tmp.mp3">
+            </audio>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="output/tmp_b.mid"><button>.midをダウンロード(ベースのみ)</button></a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="output/tmp.mid"><button>.midをダウンロード(全体)</button></a>
+        </div>
+        <br>
+        <br>
+        <img style="width: 80vw; padding-left: 10%;" src={{ key }}  title="楽譜">
+    </div>
 </body>
 </html>

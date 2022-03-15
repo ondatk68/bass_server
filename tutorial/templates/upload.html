@@ -1,37 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>bassline自動生成</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./../style/style.css">
+  <title>walking bass</title>
 </head>
 <body>
-  コード進行を書いたテキストファイルをuploadしてください。ベースラインを出力します。
-  <br>
-  <form method="POST" enctype="multipart/form-data">
-    <input type="file" name="chord" accept=".txt">
-    <input type="submit" value="送信">
-  </form>
-  <pre>
-    <code>
-      1行目: キー (C, Amなど)
-      2行目: bpm
-      3行目: コード進行
-    </code>
-  </pre>
-  <ul>
-    <li>ルートは大文字</li>
-    <li>小節線を入れる</li>
-    <li>同じコードが続く時は*で表す</li>
-    <li>1小節に1コード, 1小節にコード2つで2拍ずつの場合はコードネームだけで良い |C***|→|C|  |Dm*G*|→|DmG|
-    <li>フラットは-,  シャープは#で表す。(music21に準拠) (E-M7, F#7 など)</li>
-  </ul>
-  <br>
-  例えば、
-  <pre>
-  <code>
-    key: Gm
-    bpm: 120
-    Cm7***|F7***|B-M7***|E-M7***|Adim***|D7***|Gm***|Gm***|
-  </code>
-  </pre>
+  <div class="header">ウォーキングベース自動生成</div>
+  <div class="main">
+    <div class="explanation">
+      <!--<p>
+      コード進行を書いたテキストファイルをuploadしてください。ベースラインを出力します。
+      </p>-->
+      <p>
+        <ul>
+          <li>全て半角文字で入力してください。</li>
+          <li>適宜改行して良いが、空白文字は半角全角にかかわらず含めないこと</li>
+          <li>ルートは大文字</li>
+          <li>小節線(|)を入れる</li>
+          <li>同じコードが続く時は*で表す</li>
+          <li>1小節に1コード, 1小節にコード2つで2拍ずつの場合はコードネームだけで良い<br> |Dm*G7*|C***| → |DmG7|C|
+          <li>フラットは-,  シャープは#で表す。 (E-M7, F#7 など)</li>
+        </ul>
+      </p>
+    
+      <p>
+        C, Cm, C7, CM7, Cm7, CmM7, C6, Cm6, C9, CM9, Cm9, C69, Cm69,<br>
+        Csus4, C7sus4, CM7sus4, Csus2, C7sus2, CM7sus2, Cdim, Cdim7, Caug, Caug7,<br>
+        Cadd9, C7-5, Cm7-5, C7+5<br><br>
+        あたりが使えます(ルートはなんでもok)。<br><br>
+      </p>
+      
+    </div>
+    
+    <div class="input">
+      <!--
+      <div class="button">
+        <form method="POST" enctype="multipart/form-data">
+          <input type="file" name="chord" accept=".txt">
+          <input type="submit" value="OK">
+        </form>
+      </div>-->
+      <form method="POST" enctype="multipart/form-data">
+        <div class="key">
+          key:&nbsp;
+          <select name="tonic">
+            <option value="C#/A#m">C# / A#m</option>
+            <option value="F#/D#m">F# / D#m</option>
+            <option value="B/G#m">B / G#m</option>
+            <option value="E/C#m">E / C#m</option>
+            <option value="A/F#m">A / F#m</option>
+            <option value="D/Bm">D / Bm</option>
+            <option value="G/Em">G / Em</option>
+            <option value="C/Am" selected>C / Am</option>
+            <option value="F/Dm">F / Dm</option>
+            <option value="B-/Gm">B♭ / Gm</option>
+            <option value="E-/Cm">E♭ / Cm </option>
+            <option value="A-/Fm">A♭ / Fm</option>
+            <option value="D-/B-m">D♭ / B♭m</option>
+            <option value="G-/E-m">G♭ / E♭m</option>
+            <option value="C-/A-m">C♭ / A♭m</option>
+          </select>
+          &nbsp;&nbsp;
+          <input type="radio" name="Mm" value="M" checked>major
+          <input type="radio" name="Mm" value="m">minor
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          bpm:&nbsp;<input class="tel" type="tel" name="bpm" maxlength="3" value="100">
+        </div>
+        <br>
+        <div class="chord">
+          <textarea class="text" type="text" name="chord" placeholder="|C6C#dim|Dm7G7|Dm7G7|C6*Dm7G7|CC7|F6F#dim|G7|C6G7|"></textarea>
+        </div>
+        <div class="submit">
+          <input type="submit" value="OK">
+        </div>
+      </form>
+    </div>
+
+    <!--<pre>
+      <code>
+        1行目: キー (C, Amなど)
+        2行目: bpm
+        3行目: コード進行
+      </code>
+    </pre>*/-->
+   
+  </div>    
 </body>
 </html>
