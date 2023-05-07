@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./../style/style.css">
   <title>walking bass</title>
 </head>
+
 <body>
   <div class="header">ウォーキングベース自動生成</div>
   <div class="main">
@@ -13,26 +15,26 @@
       コード進行を書いたテキストファイルをuploadしてください。ベースラインを出力します。
       </p>-->
       <p>
-        <ul>
-          <li>全て半角文字で入力してください。</li>
-          <li>適宜改行して良いが、空白文字は半角全角にかかわらず含めないこと</li>
-          <li>ルートは大文字</li>
-          <li>小節線(|)を入れる</li>
-          <li>同じコードが続く時は*で表す</li>
-          <li>1小節に1コード, 1小節にコード2つで2拍ずつの場合はコードネームだけで良い<br> |Dm*G7*|C***| → |DmG7|C|
-          <li>フラットは-,  シャープは#で表す。 (E-M7, F#7 など)</li>
-        </ul>
+      <ul>
+        <li>全て半角文字で入力してください。</li>
+        <li>適宜改行して良いが、空白文字は半角全角にかかわらず含めないこと</li>
+        <li>ルートは大文字</li>
+        <li>小節線(|)を入れる</li>
+        <li>同じコードが続く時は*で表す</li>
+        <li>1小節に1コード, 1小節にコード2つで2拍ずつの場合はコードネームだけで良い<br> |Dm*G7*|C***| → |DmG7|C|
+        <li>フラットは-, シャープは#で表す。 (E-M7, F#7 など)</li>
+      </ul>
       </p>
-    
+
       <p>
         C, Cm, C7, CM7, Cm7, CmM7, C6, Cm6, C9, CM9, Cm9, C69, Cm69,<br>
         Csus4, C7sus4, CM7sus4, Csus2, C7sus2, CM7sus2, Cdim, Cdim7, Caug, Caug7,<br>
-        Cadd9, C7-5, Cm7-5, C7+5<br><br>
+        Cadd9, C7b5, Cm7b5, C7#5<br><br>
         あたりが使えます(ルートはなんでもok)。<br><br>
       </p>
-      
+
     </div>
-    
+
     <div class="input">
       <!--
       <div class="button">
@@ -69,7 +71,8 @@
         </div>
         <br>
         <div class="chord">
-          <textarea class="text" type="text" name="chord" placeholder="|C6C#dim|Dm7G7|Dm7G7|C6*Dm7G7|CC7|F6F#dim|G7|C6G7|"></textarea>
+          <textarea class="text" type="text" name="chord"
+            placeholder="|C6C#dim|Dm7G7|Dm7G7|C6*Dm7G7|CC7|F6F#dim|G7|C6G7|"></textarea>
         </div>
         <div class="submit">
           <input type="submit" value="OK">
@@ -84,7 +87,8 @@
         3行目: コード進行
       </code>
     </pre>*/-->
-   
-  </div>    
+
+  </div>
 </body>
+
 </html>
