@@ -3,10 +3,11 @@ import time
 from flask import Flask, request, render_template
 
 import main_web
-import user
+# import user
 
 app = Flask(__name__, static_folder='.', static_url_path='')
-UPLOAD_FOLDER = user.name
+# UPLOAD_FOLDER = user.name
+UPLOAD_FOLDER = "upload"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['POST'])
@@ -33,6 +34,6 @@ def upload_file():
 @app.route('/', methods=['GET'])
 def upload_file_view():
     return render_template('upload.html')
-    
-    
+
+
 app.run(port=8000, debug=True)
